@@ -8,7 +8,13 @@
                     </div>
 
                     <div class="clearfix"></div>
-
+                    <?php
+                    include_once dirname(__FILE__) . "/../config/conexao.php";
+                    $dados = $pdo->prepare("SELECT * FROM usuario INNER JOIN instituicao INNER JOIN modulos ON usuario.id_usuario='".$_SESSION['id_usuario']."' AND usuario.instituicao = instituicao.id_institU AND instituicao.modulos = modulos.id_modulo");
+                    $dados->bindParam(':id_usuario', $_SESSION['id_usuario'], PDO::PARAM_INT);
+                    $dados->execute();
+                    $dados = $dados->fetch(PDO::FETCH_ASSOC);
+                    ?>
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
@@ -16,7 +22,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Bem vindo(a),</span>
-                            <h2>nome do usuário</h2>
+                            <h2><?php echo $dados['nome'] ?></h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -618,7 +624,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../production/images/img.jpg" alt="">Nome do usuário
+                                    <img src="../production/images/img.jpg" alt=""><?php echo $dados['nome'] ?>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">

@@ -17,40 +17,41 @@ try {
     $num = $query->rowCount();
     if ($num == 0) {
         echo 0;
-        exit;
+        $_SESSION['login_inv'] = 1;
+        header("Location: ../production/login.php");
     } elseif ($num > 0 && $_SESSION['nivel'] == '1') {
         echo 1;
-        //session_start();
+        unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
         header("Location: ../production/index.php");
         exit;
     } elseif ($num > 0 && $_SESSION['nivel'] == '2') {
         echo 1;
-        //session_start();
+        unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
         header("Location: ../production/index.php");
         exit;
     }elseif ($num > 0 && $_SESSION['nivel'] == '3') {
         echo 1;
-        //session_start();
+        unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
         header("Location: ../production/index.php");
         exit;
     }elseif ($num > 0 && $_SESSION['nivel'] == '4') {
         echo 1;
-        //session_start();
+        unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
         header("Location: ../production/index.php");
         exit;
     }elseif ($num > 0 && $_SESSION['nivel'] == '5') {
         echo 1;
-        //session_start();
+        unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
         header("Location: ../production/index.php");
         exit;
     }elseif ($num > 0 && $_SESSION['nivel'] == '6') {
         echo 1;
-        //session_start();
+        unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
         header("Location: ../production/index.php");
         exit;

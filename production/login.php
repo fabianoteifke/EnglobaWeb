@@ -25,7 +25,7 @@ session_start();
         <script src="extra/js/jquery.validate.js" type="text/javascript"></script>
         <script>
             $(document).ready(function () {
-                $('#errolog').hide(); //Esconde o elemento com id errolog
+            //    $('#errolog').hide(); //Esconde o elemento com id errolog
 //                $('#login_form').submit(function () { 	//Ao submeter formulário
 //                    var login = $('#login').val(); //Pega valor do campo login
 //                    var senha = $('#senha').val(); //Pega valor do campo senha
@@ -83,7 +83,7 @@ session_start();
                             </div>
                         </form>
                     </section>
-                    <div id="errolog"><p>Login ou senha incorretos</p></div>
+                    <?php if($_SESSION['login_inv'] == 1){ echo "<p>Login ou senha incorretos</p>";} ?>
                 </div>
 
                 <div id="register" class="animate form registration_form">
