@@ -385,7 +385,12 @@
                             </div>
 
                         </div>
-                    <?php } elseif ($_SESSION['nivel'] == "5") { ?>
+                    <?php } elseif ($_SESSION['nivel'] == "5") { 
+                        $dados_profe = $pdo->prepare("SELECT * FROM funcionario_escola INNER JOIN usuario INNER JOIN cursos INNER JOIN disciplina ON funcionario_escola.cargo = '1' AND funcionario_escola.id_usuario = usuario.id_usuario AND usuario.id_usuario = '".$dados['id_usuario']."' AND cursos.id_curso = disciplina.curso AND disciplina.professor = funcionario_escola.id_funcionario_escola");
+                        $dados_profe->bindParam(':id_usuario', $dados['id_usuario'], PDO::PARAM_INT);
+                        $dados_profe->execute();
+                        $dados_profe = $dados_profe->fetch(PDO::FETCH_ASSOC);
+                        ?>
                         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                             <div class="menu_section">
                                 <h3>Menu</h3>
@@ -396,6 +401,16 @@
                                                                                 <li><a href="index2.html">Dashboard2</a></li>
                                                                                 <li><a href="index3.html">Dashboard3</a></li>
                                                                             </ul>-->
+                                    </li>
+                                    <li><a><i class="fa fa-edit"></i> Gerenciar aulas <span class="fa fa-chevron-down"></span></a>
+                                        <ul class="nav child_menu">
+                                            <li><a href="chamada.php">Chamada</a></li>
+                                            <!-- <li><a href="form_advanced.html">Advanced Components</a></li>
+                                            <li><a href="form_validation.html">Form Validation</a></li>
+                                            <li><a href="form_wizards.html">Form Wizard</a></li>
+                                            <li><a href="form_upload.html">Form Upload</a></li>
+                                            <li><a href="form_buttons.html">Form Buttons</a></li>-->
+                                        </ul>
                                     </li>
                                     <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                                         <ul class="nav child_menu">
