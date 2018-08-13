@@ -18,42 +18,42 @@ try {
     if ($num == 0) {
         echo 0;
         $_SESSION['login_inv'] = 1;
-        header("Location: ../production/login.php");
+        header("Location: ../view/inicio.php");
     } elseif ($num > 0 && $_SESSION['nivel'] == '1') {
         echo 1;
         unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
-        header("Location: ../production/index.php");
+        header("Location: ../view/inicio.php");
         exit;
     } elseif ($num > 0 && $_SESSION['nivel'] == '2') {
         echo 1;
         unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
-        header("Location: ../production/index.php");
+        header("Location: ../view/inicio.php");
         exit;
     }elseif ($num > 0 && $_SESSION['nivel'] == '3') {
         echo 1;
         unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
-        header("Location: ../production/index.php");
+        header("Location: ../view/inicio.php");
         exit;
     }elseif ($num > 0 && $_SESSION['nivel'] == '4') {
         echo 1;
         unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
-        header("Location: ../production/index.php");
+        header("Location: ../view/inicio.php");
         exit;
     }elseif ($num > 0 && $_SESSION['nivel'] == '5') {
         echo 1;
         unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
-        header("Location: ../production/index.php");
+        header("Location: ../view/inicio.php");
         exit;
     }elseif ($num > 0 && $_SESSION['nivel'] == '6') {
         echo 1;
         unset($_SESSION['login_inv']); 
         $_SESSION['logado'] = TRUE;
-        header("Location: ../production/index.php");
+        header("Location: ../view/inicio.php");
         exit;
     }
 } catch (PDOException $error_select) {

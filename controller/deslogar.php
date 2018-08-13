@@ -1,4 +1,4 @@
 <?php
 session_start();
-session_destroy();
-header("location: ../production/login.php");
+session_unset();
+header("location: ../view/index.php");

@@ -83,22 +83,26 @@ session_start();
                             </div>
                         </form>
                     </section>
-                    <?php if($_SESSION['login_inv'] == 1){ echo "<p>Login ou senha incorretos</p>";} ?>
+                    <?php if(isset($_SESSION['login_inv']) && $_SESSION['login_inv'] == 1){ echo "<p>Login ou senha incorretos</p>";} ?>
                 </div>
 
                 <div id="register" class="animate form registration_form">
                     <section class="login_content">
-                        <form id="cad_form" method="POST">
+                        <form id="cad_form" method="POST" action="../controller/processa_cad.php">
                             <h1>Criar conta</h1>
                             <div>
-                                <input type="text" class="form-control" placeholder="Username" required="" />
+                                <input type="email" class="form-control" placeholder="Email" name="email" id="mail" required="" />
                             </div>
                             <div>
-                                <input type="email" class="form-control" placeholder="Email" required="" />
+                                <input type="password" class="form-control" placeholder="Confirmar email" id="mail2" required="" />
+                            </div>
+<!--                            <div>
+                                <input type="password" class="form-control" placeholder="Senha" name="senha" id="senha" required="" />
                             </div>
                             <div>
-                                <input type="password" class="form-control" placeholder="Password" required="" />
+                                <input type="password" class="form-control" placeholder="Confirmar senha" id="senha2" required="" />
                             </div>
+        -->
                             <div>
                                 <button type="submit" class="btn btn-default submit">Cadastrar</button>
                             </div>

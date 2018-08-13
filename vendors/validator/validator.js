@@ -15,7 +15,7 @@ var validator = (function($){
     /* general text messages
     */
     message = {
-        invalid         : 'invalid input',
+        invalid         : 'Campo inválido',
         checked         : 'must be checked',
         empty           : 'please put something here',
         min             : 'input is too short',
@@ -28,8 +28,8 @@ var validator = (function($){
         email_repeat    : 'emails do not match',
         password_repeat : 'passwords do not match',
         repeat          : 'no match',
-        complete        : 'input is not complete',
-        select          : 'Please select an option'
+        complete        : 'O campo está incompleto',
+        select          : 'Por favor, selecione uma opção'
     };
 
     if(!window.console){

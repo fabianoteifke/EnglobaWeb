@@ -620,7 +620,7 @@
                         <a data-toggle="tooltip" data-placement="top" title="Lock">
                             <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                         </a>
-                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.php">
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="../controller/deslogar.php">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
@@ -650,7 +650,7 @@
                                         </a>
                                     </li>
                                     <li><a href="javascript:;">Ajuda</a></li>
-                                    <li><a href="login.php"><i class="fa fa-sign-out pull-right"></i>Sair</a></li>
+                                    <li><a href="../controller/deslogar.php"><i class="fa fa-sign-out pull-right"></i>Sair</a></li>
                                 </ul>
                             </li>
 
