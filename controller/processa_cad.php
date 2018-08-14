@@ -9,7 +9,7 @@ $md5 = md5($id);
 
 //$header = "From: EnglobaWeb";
 //$assunto = "Confirme seu cadastro:";
-//$link = "http://localhost/engloba/view/cad_institu.php?h=".$md5;
+$link = "http://localhost/engloba/view/cad_institu.php?h=".$md5;
 //$mensagem = "Clique no link abaixo para confirmar o cadastro:".$link;
 //mail($mail, $assunto, $mensagem, $header);
  
@@ -39,7 +39,7 @@ try {
  
      //Define os destinatário(s)
      //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-     $mail->AddAddress('$mail', 'Teste Locaweb');
+     $mail->AddAddress('teifkefabiano@gmail.com', 'Teste Locaweb');
  
      //Campos abaixo são opcionais 
      //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

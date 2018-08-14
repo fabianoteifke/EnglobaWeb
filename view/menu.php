@@ -36,7 +36,7 @@
                             <div class="menu_section">
                                 <h3>Menu</h3>
                                 <ul class="nav side-menu">
-                                    <li><a href="index.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
+                                    <li><a href="inicio.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
                                         <!--                                    <ul class="nav child_menu">
                                                                                 <li><a href="index.php">Dashboard</a></li>
                                                                                 <li><a href="index2.html">Dashboard2</a></li>

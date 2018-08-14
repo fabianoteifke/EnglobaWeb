@@ -76,8 +76,8 @@ class Instituicao extends Banco1 {
 
             $this->stmt = $this->conn->prepare($query);
 
-            $this->stmt->bindParam(':nome_institu', $this->nome, PDO::PARAM_INT);
-            $this->stmt->bindParam(':endereco_institu', $this->endereco, PDO::PARAM_INT);
+            $this->stmt->bindParam(':nome_institu', $this->nome, PDO::PARAM_STR);
+            $this->stmt->bindParam(':endereco_institu', $this->endereco, PDO::PARAM_STR);
             $this->stmt->bindParam(':estado', $this->estado, PDO::PARAM_STR);
             $this->stmt->bindParam(':cidade', $this->cidade, PDO::PARAM_STR);
             $this->stmt->bindParam(':modulos', $this->modulo, PDO::PARAM_STR);
@@ -217,7 +217,7 @@ class usuario extends Banco1 {
     public function salvar() {
         try {
 
-            $query = "INSERT INTO usuario (nome,nivel,login,senha,sexo,valor,data_nasc,instituicao,email) VALUES (:nome,:nivel,:login,:senha,:sexo,:data_nasc,:instituicao,:email) ";
+            $query = "INSERT INTO usuario (nome,nivel,login,senha,sexo,data_nasc,instituicao,email) VALUES (:nome,:nivel,:login,:senha,:sexo,:data_nasc,:instituicao,:email) ";
 
             $this->stmt = $this->conn->prepare($query);
 
@@ -373,11 +373,12 @@ class modulo extends Banco1 {
 
 }
 
-class funcionario_engloba extends Banco1 {
+class funcionario_escola extends Banco1 {
 
     private $id;
     private $user;
-    private $endereco;
+    private $cpf;
+    private $cargo;
 
     function getId() {
         return $this->id;
@@ -387,8 +388,12 @@ class funcionario_engloba extends Banco1 {
         return $this->user;
     }
 
-    function getEndereco() {
-        return $this->endereco;
+    function getCpf() {
+        return $this->cpf;
+    }
+
+    function getCargo() {
+        return $this->cargo;
     }
 
     function setId($id) {
@@ -399,19 +404,23 @@ class funcionario_engloba extends Banco1 {
         $this->user = $user;
     }
 
-    function setEndereco($endereco) {
-        $this->endereco = $endereco;
+    function setCpf($cpf) {
+        $this->cpf = $cpf;
     }
-
+    function setCargo($cargo) {
+        $this->cargo = $cargo;
+    }
         
     public function salvar() {
         try {
 
-            $query = "INSERT INTO funcionario_engloba (id_usuario) VALUES (:id_usuario) ";
+            $query = "INSERT INTO funcionario_escola (id_usuario,cpf,cargo) VALUES (:id_usuario,:cpf,:cargo) ";
 
             $this->stmt = $this->conn->prepare($query);
 
             $this->stmt->bindParam(':id_usuario', $this->user, PDO::PARAM_INT);
+            $this->stmt->bindParam(':cpf', $this->cpf, PDO::PARAM_STR);
+            $this->stmt->bindParam(':cargo', $this->cargo, PDO::PARAM_STR);
 
             if ($this->stmt->execute()) {
                 return true;
@@ -424,11 +433,13 @@ class funcionario_engloba extends Banco1 {
 
     public function atualizar() {
         try {
-            $query = "UPDATE funcionario_engloba SET id_usuario = :id_usuario WHERE id_funcionario_engloba = :id_funcionario_engloba ";
+            $query = "UPDATE funcionario_escola SET id_usuario = :id_usuario, cpf = :cpf, cargo = :cargo WHERE id_funcionario_escola = :id_funcionario_escola ";
             $this->stmt = $this->conn->prepare($query);
 
-            $this->stmt->bindParam(':id_funcionario_engloba', $this->id, PDO::PARAM_INT);
+            $this->stmt->bindParam(':id_funcionario_escola', $this->id, PDO::PARAM_INT);
             $this->stmt->bindParam(':id_usuario', $this->user, PDO::PARAM_INT);
+            $this->stmt->bindParam(':cpf', $this->cpf, PDO::PARAM_STR);
+            $this->stmt->bindParam(':cargo', $this->cargo, PDO::PARAM_STR);
 
             if ($this->stmt->execute()) {
                 return true;
@@ -441,9 +452,9 @@ class funcionario_engloba extends Banco1 {
 
     public function excluir() {
         try {
-            $query = "DELETE FROM funcionario_engloba WHERE id_funcionario_engloba = :id_funcionario_engloba ";
+            $query = "DELETE FROM funcionario_escola WHERE id_funcionario_escola = :id_funcionario_escola ";
             $this->stmt = $this->conn->prepare($query);
-            $this->stmt->bindParam(':id_funcionario_engloba', $this->id, PDO::PARAM_INT);
+            $this->stmt->bindParam(':id_funcionario_escola', $this->id, PDO::PARAM_INT);
             if ($this->stmt->execute()) {
                 return true;
             }
