@@ -94,7 +94,7 @@ session_start();
                                 <input type="email" class="form-control" placeholder="Email" name="email" id="mail" required="" />
                             </div>
                             <div>
-                                <input type="password" class="form-control" placeholder="Confirmar email" id="mail2" required="" />
+                                <input type="email" class="form-control" placeholder="Confirmar email" id="mail2" required="" />
                             </div>
 <!--                            <div>
                                 <input type="password" class="form-control" placeholder="Senha" name="senha" id="senha" required="" />

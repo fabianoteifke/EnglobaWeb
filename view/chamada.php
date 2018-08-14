@@ -34,7 +34,7 @@ if($_SESSION['logado'] <> TRUE){
     </head>
     <?php
     include_once 'menu.php';
-    $resultado = $pdo->prepare("SELECT * FROM alunos_turma INNER JOIN turma INNER JOIN aluno INNER JOIN cursos INNER JOIN disciplina ON alunos_turma.id_aluno = aluno.id_aluno AND alunos_turma.id_turma = turma.id_turma AND disciplina.curso = cursos.id_curso AND disciplina.instituicao = '".$dados['id_instituicao']."' AND disciplina.professor = '".$dados_profe['id_funcionario_escola']."'");
+    $resultado = $pdo->prepare("SELECT * FROM disciplina INNER JOIN ");
     $resultado->execute();
     ?>
         <!-- page content -->
@@ -103,6 +103,7 @@ if($_SESSION['logado'] <> TRUE){
                       <tbody>
                         <?php
                             while ($msg = $resultado->fetch(PDO::FETCH_ASSOC)):
+
                         ?>
                         <tr>
                           <td>Tiger</td>
