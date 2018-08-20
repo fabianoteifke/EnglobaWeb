@@ -22,7 +22,9 @@
                         </div>
                         <div class="profile_info">
                             <span>Bem vindo(a),</span>
-                            <h2><?php echo $dados['nome'] ?></h2>
+                            <h2>
+                                <?php echo $dados['nome'] ?>
+                            </h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -31,31 +33,31 @@
                     <?php
                     if ($_SESSION['nivel'] == "1") {
                         ?>
-                        <!-- sidebar menu -->
-                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                            <div class="menu_section">
-                                <h3>Menu</h3>
-                                <ul class="nav side-menu">
-                                    <li><a href="inicio.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
-                                        <!--                                    <ul class="nav child_menu">
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Menu</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="inicio.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
+                                    <!--                                    <ul class="nav child_menu">
                                                                                 <li><a href="index.php">Dashboard</a></li>
                                                                                 <li><a href="index2.html">Dashboard2</a></li>
                                                                                 <li><a href="index3.html">Dashboard3</a></li>
                                                                             </ul>-->
-                                    </li>
-                                    <li><a><i class="fa fa-edit"></i> Gerenciar Usuários <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="funcionarios.php">Gerenciar funcionários</a></li>
-                                            <li><a href="usuarios.php">Gerenciar usuários</a></li>
-<!--                                            <li><a href="form_validation.html">Form Validation</a></li>
+                                </li>
+                                <li><a><i class="fa fa-edit"></i> Gerenciar Usuários <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="funcionarios.php">Gerenciar funcionários</a></li>
+                                        <li><a href="usuarios.php">Gerenciar usuários</a></li>
+                                        <!--                                            <li><a href="form_validation.html">Form Validation</a></li>
                                             <li><a href="form_wizards.html">Form Wizard</a></li>
                                             <li><a href="form_upload.html">Form Upload</a></li>
                                             <li><a href="form_buttons.html">Form Buttons</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-desktop"></i> SAC <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-<!--                                            <li><a href="general_elements.html">General Elements</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-desktop"></i> SAC <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <!--                                            <li><a href="general_elements.html">General Elements</a></li>
                                             <li><a href="media_gallery.html">Media Gallery</a></li>
                                             <li><a href="typography.html">Typography</a></li>
                                             <li><a href="icons.html">Icons</a></li>
@@ -63,103 +65,103 @@
                                             <li><a href="widgets.html">Widgets</a></li>
                                             <li><a href="invoice.html">Invoice</a></li>
                                             <li><a href="inbox.html">Inbox</a></li>-->
-                                            <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a href="escolas.php"><i class="fa fa-calendar"></i> Gerenciar escolas <span class="fa fa-chevron-right"></span></a>
-                                        <ul class="nav child_menu">
-                                            <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
-                                            <!--                                        <li><a href="tables.html">Tables</a></li>
+                                        <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
+                                    </ul>
+                                </li>
+                                <li><a href="escolas.php"><i class="fa fa-calendar"></i> Gerenciar escolas <span class="fa fa-chevron-right"></span></a>
+                                    <ul class="nav child_menu">
+                                        <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
+                                        <!--                                        <li><a href="tables.html">Tables</a></li>
                                                                                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>-->
-                                        </ul>
-                                    </li>
-                            </div>
-
+                                    </ul>
+                                </li>
                         </div>
+
+                    </div>
                     <?php } elseif ($_SESSION['nivel'] == "2") { ?>
-                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                            <div class="menu_section">
-                                <h3>Menu</h3>
-                                <ul class="nav side-menu">
-                                    <li><a href="index.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
-                                        <!--                                    <ul class="nav child_menu">
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Menu</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="index.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
+                                    <!--                                    <ul class="nav child_menu">
                                                                                 <li><a href="index.php">Dashboard</a></li>
                                                                                 <li><a href="index2.html">Dashboard2</a></li>
                                                                                 <li><a href="index3.html">Dashboard3</a></li>
                                                                             </ul>-->
-                                    </li>
-                                    <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="form.html">General Form</a></li>
-                                            <li><a href="form_advanced.html">Advanced Components</a></li>
-                                            <li><a href="form_validation.html">Form Validation</a></li>
-                                            <li><a href="form_wizards.html">Form Wizard</a></li>
-                                            <li><a href="form_upload.html">Form Upload</a></li>
-                                            <li><a href="form_buttons.html">Form Buttons</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="general_elements.html">General Elements</a></li>
-                                            <li><a href="media_gallery.html">Media Gallery</a></li>
-                                            <li><a href="typography.html">Typography</a></li>
-                                            <li><a href="icons.html">Icons</a></li>
-                                            <li><a href="glyphicons.html">Glyphicons</a></li>
-                                            <li><a href="widgets.html">Widgets</a></li>
-                                            <li><a href="invoice.html">Invoice</a></li>
-                                            <li><a href="inbox.html">Inbox</a></li>
-                                            <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a href="calendar.php"><i class="fa fa-calendar"></i> Calendário <span class="fa fa-chevron-right"></span></a>
-                                        <ul class="nav child_menu">
-                                            <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
-                                            <!--                                        <li><a href="tables.html">Tables</a></li>
+                                </li>
+                                <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="form.html">General Form</a></li>
+                                        <li><a href="form_advanced.html">Advanced Components</a></li>
+                                        <li><a href="form_validation.html">Form Validation</a></li>
+                                        <li><a href="form_wizards.html">Form Wizard</a></li>
+                                        <li><a href="form_upload.html">Form Upload</a></li>
+                                        <li><a href="form_buttons.html">Form Buttons</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="general_elements.html">General Elements</a></li>
+                                        <li><a href="media_gallery.html">Media Gallery</a></li>
+                                        <li><a href="typography.html">Typography</a></li>
+                                        <li><a href="icons.html">Icons</a></li>
+                                        <li><a href="glyphicons.html">Glyphicons</a></li>
+                                        <li><a href="widgets.html">Widgets</a></li>
+                                        <li><a href="invoice.html">Invoice</a></li>
+                                        <li><a href="inbox.html">Inbox</a></li>
+                                        <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
+                                    </ul>
+                                </li>
+                                <li><a href="calendar.php"><i class="fa fa-calendar"></i> Calendário <span class="fa fa-chevron-right"></span></a>
+                                    <ul class="nav child_menu">
+                                        <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
+                                        <!--                                        <li><a href="tables.html">Tables</a></li>
                                                                                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="chartjs.html">Chart JS</a></li>
-                                            <li><a href="chartjs2.html">Chart JS2</a></li>
-                                            <li><a href="morisjs.html">Moris JS</a></li>
-                                            <li><a href="echarts.html">ECharts</a></li>
-                                            <li><a href="other_charts.html">Other Charts</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                                            <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="menu_section">
-                                <h3>Live On</h3>
-                                <ul class="nav side-menu">
-                                    <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="e_commerce.html">E-commerce</a></li>
-                                            <li><a href="projects.html">Projects</a></li>
-                                            <li><a href="project_detail.html">Project Detail</a></li>
-                                            <li><a href="contacts.html">Contacts</a></li>
-                                            <li><a href="profile.html">Profile</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="page_403.html">403 Error</a></li>
-                                            <li><a href="page_404.html">404 Error</a></li>
-                                            <li><a href="page_500.html">500 Error</a></li>
-                                            <li><a href="plain_page.html">Plain Page</a></li>
-                                            <li><a href="login.html">Login Page</a></li>
-                                            <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="#level1_1">Level One</a>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="chartjs.html">Chart JS</a></li>
+                                        <li><a href="chartjs2.html">Chart JS2</a></li>
+                                        <li><a href="morisjs.html">Moris JS</a></li>
+                                        <li><a href="echarts.html">ECharts</a></li>
+                                        <li><a href="other_charts.html">Other Charts</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                                        <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu_section">
+                            <h3>Live On</h3>
+                            <ul class="nav side-menu">
+                                <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="e_commerce.html">E-commerce</a></li>
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="project_detail.html">Project Detail</a></li>
+                                        <li><a href="contacts.html">Contacts</a></li>
+                                        <li><a href="profile.html">Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="page_403.html">403 Error</a></li>
+                                        <li><a href="page_404.html">404 Error</a></li>
+                                        <li><a href="page_500.html">500 Error</a></li>
+                                        <li><a href="plain_page.html">Plain Page</a></li>
+                                        <li><a href="login.html">Login Page</a></li>
+                                        <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#level1_1">Level One</a>
                                             <li><a>Level One<span class="fa fa-chevron-down"></span></a>
                                                 <ul class="nav child_menu">
                                                     <li class="sub_menu"><a href="level2.html">Level Two</a>
@@ -172,97 +174,98 @@
                                             </li>
                                             <li><a href="#level1_2">Level One</a>
                                             </li>
-                                        </ul>
-                                    </li>                  
-                                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                                </ul>
-                            </div>
-
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming
+                                            Soon</span></a></li>
+                            </ul>
                         </div>
+
+                    </div>
                     <?php } elseif ($_SESSION['nivel'] == "3") { ?>
-                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                            <div class="menu_section">
-                                <h3>Menu</h3>
-                                <ul class="nav side-menu">
-                                    <li><a href="index.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
-                                        <!--                                    <ul class="nav child_menu">
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Menu</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="inicio.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
+                                    <!--                                    <ul class="nav child_menu">
                                                                                 <li><a href="index.php">Dashboard</a></li>
                                                                                 <li><a href="index2.html">Dashboard2</a></li>
                                                                                 <li><a href="index3.html">Dashboard3</a></li>
                                                                             </ul>-->
-                                    </li>
-                                    <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="form.html">General Form</a></li>
-                                            <li><a href="form_advanced.html">Advanced Components</a></li>
-                                            <li><a href="form_validation.html">Form Validation</a></li>
-                                            <li><a href="form_wizards.html">Form Wizard</a></li>
-                                            <li><a href="form_upload.html">Form Upload</a></li>
-                                            <li><a href="form_buttons.html">Form Buttons</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="general_elements.html">General Elements</a></li>
-                                            <li><a href="media_gallery.html">Media Gallery</a></li>
-                                            <li><a href="typography.html">Typography</a></li>
-                                            <li><a href="icons.html">Icons</a></li>
-                                            <li><a href="glyphicons.html">Glyphicons</a></li>
-                                            <li><a href="widgets.html">Widgets</a></li>
-                                            <li><a href="invoice.html">Invoice</a></li>
-                                            <li><a href="inbox.html">Inbox</a></li>
-                                            <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a href="calendar.php"><i class="fa fa-calendar"></i> Calendário <span class="fa fa-chevron-right"></span></a>
-                                        <ul class="nav child_menu">
-                                            <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
-                                            <!--                                        <li><a href="tables.html">Tables</a></li>
+                                </li>
+                                <li><a><i class="fa fa-edit"></i> Funcionários <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="cad_func_escola.php">Cadastrar funcionários</a></li>
+                                        <li><a href="form_advanced.html">Advanced Components</a></li>
+                                        <li><a href="form_validation.html">Form Validation</a></li>
+                                        <li><a href="form_wizards.html">Form Wizard</a></li>
+                                        <li><a href="form_upload.html">Form Upload</a></li>
+                                        <li><a href="form_buttons.html">Form Buttons</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="general_elements.html">General Elements</a></li>
+                                        <li><a href="media_gallery.html">Media Gallery</a></li>
+                                        <li><a href="typography.html">Typography</a></li>
+                                        <li><a href="icons.html">Icons</a></li>
+                                        <li><a href="glyphicons.html">Glyphicons</a></li>
+                                        <li><a href="widgets.html">Widgets</a></li>
+                                        <li><a href="invoice.html">Invoice</a></li>
+                                        <li><a href="inbox.html">Inbox</a></li>
+                                        <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
+                                    </ul>
+                                </li>
+                                <li><a href="calendar.php"><i class="fa fa-calendar"></i> Calendário <span class="fa fa-chevron-right"></span></a>
+                                    <ul class="nav child_menu">
+                                        <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
+                                        <!--                                        <li><a href="tables.html">Tables</a></li>
                                                                                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="chartjs.html">Chart JS</a></li>
-                                            <li><a href="chartjs2.html">Chart JS2</a></li>
-                                            <li><a href="morisjs.html">Moris JS</a></li>
-                                            <li><a href="echarts.html">ECharts</a></li>
-                                            <li><a href="other_charts.html">Other Charts</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                                            <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="menu_section">
-                                <h3>Live On</h3>
-                                <ul class="nav side-menu">
-                                    <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="e_commerce.html">E-commerce</a></li>
-                                            <li><a href="projects.html">Projects</a></li>
-                                            <li><a href="project_detail.html">Project Detail</a></li>
-                                            <li><a href="contacts.html">Contacts</a></li>
-                                            <li><a href="profile.html">Profile</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="page_403.html">403 Error</a></li>
-                                            <li><a href="page_404.html">404 Error</a></li>
-                                            <li><a href="page_500.html">500 Error</a></li>
-                                            <li><a href="plain_page.html">Plain Page</a></li>
-                                            <li><a href="login.html">Login Page</a></li>
-                                            <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="#level1_1">Level One</a>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="chartjs.html">Chart JS</a></li>
+                                        <li><a href="chartjs2.html">Chart JS2</a></li>
+                                        <li><a href="morisjs.html">Moris JS</a></li>
+                                        <li><a href="echarts.html">ECharts</a></li>
+                                        <li><a href="other_charts.html">Other Charts</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                                        <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu_section">
+                            <h3>Live On</h3>
+                            <ul class="nav side-menu">
+                                <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="e_commerce.html">E-commerce</a></li>
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="project_detail.html">Project Detail</a></li>
+                                        <li><a href="contacts.html">Contacts</a></li>
+                                        <li><a href="profile.html">Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="page_403.html">403 Error</a></li>
+                                        <li><a href="page_404.html">404 Error</a></li>
+                                        <li><a href="page_500.html">500 Error</a></li>
+                                        <li><a href="plain_page.html">Plain Page</a></li>
+                                        <li><a href="login.html">Login Page</a></li>
+                                        <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#level1_1">Level One</a>
                                             <li><a>Level One<span class="fa fa-chevron-down"></span></a>
                                                 <ul class="nav child_menu">
                                                     <li class="sub_menu"><a href="level2.html">Level Two</a>
@@ -275,97 +278,98 @@
                                             </li>
                                             <li><a href="#level1_2">Level One</a>
                                             </li>
-                                        </ul>
-                                    </li>                  
-                                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                                </ul>
-                            </div>
-
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming
+                                            Soon</span></a></li>
+                            </ul>
                         </div>
+
+                    </div>
                     <?php } elseif ($_SESSION['nivel'] == "4") { ?>
-                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                            <div class="menu_section">
-                                <h3>Menu</h3>
-                                <ul class="nav side-menu">
-                                    <li><a href="index.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
-                                        <!--                                    <ul class="nav child_menu">
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Menu</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="index.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
+                                    <!--                                    <ul class="nav child_menu">
                                                                                 <li><a href="index.php">Dashboard</a></li>
                                                                                 <li><a href="index2.html">Dashboard2</a></li>
                                                                                 <li><a href="index3.html">Dashboard3</a></li>
                                                                             </ul>-->
-                                    </li>
-                                    <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="form.html">General Form</a></li>
-                                            <li><a href="form_advanced.html">Advanced Components</a></li>
-                                            <li><a href="form_validation.html">Form Validation</a></li>
-                                            <li><a href="form_wizards.html">Form Wizard</a></li>
-                                            <li><a href="form_upload.html">Form Upload</a></li>
-                                            <li><a href="form_buttons.html">Form Buttons</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="general_elements.html">General Elements</a></li>
-                                            <li><a href="media_gallery.html">Media Gallery</a></li>
-                                            <li><a href="typography.html">Typography</a></li>
-                                            <li><a href="icons.html">Icons</a></li>
-                                            <li><a href="glyphicons.html">Glyphicons</a></li>
-                                            <li><a href="widgets.html">Widgets</a></li>
-                                            <li><a href="invoice.html">Invoice</a></li>
-                                            <li><a href="inbox.html">Inbox</a></li>
-                                            <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a href="calendar.php"><i class="fa fa-calendar"></i> Calendário <span class="fa fa-chevron-right"></span></a>
-                                        <ul class="nav child_menu">
-                                            <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
-                                            <!--                                        <li><a href="tables.html">Tables</a></li>
+                                </li>
+                                <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="form.html">General Form</a></li>
+                                        <li><a href="form_advanced.html">Advanced Components</a></li>
+                                        <li><a href="form_validation.html">Form Validation</a></li>
+                                        <li><a href="form_wizards.html">Form Wizard</a></li>
+                                        <li><a href="form_upload.html">Form Upload</a></li>
+                                        <li><a href="form_buttons.html">Form Buttons</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="general_elements.html">General Elements</a></li>
+                                        <li><a href="media_gallery.html">Media Gallery</a></li>
+                                        <li><a href="typography.html">Typography</a></li>
+                                        <li><a href="icons.html">Icons</a></li>
+                                        <li><a href="glyphicons.html">Glyphicons</a></li>
+                                        <li><a href="widgets.html">Widgets</a></li>
+                                        <li><a href="invoice.html">Invoice</a></li>
+                                        <li><a href="inbox.html">Inbox</a></li>
+                                        <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
+                                    </ul>
+                                </li>
+                                <li><a href="calendar.php"><i class="fa fa-calendar"></i> Calendário <span class="fa fa-chevron-right"></span></a>
+                                    <ul class="nav child_menu">
+                                        <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
+                                        <!--                                        <li><a href="tables.html">Tables</a></li>
                                                                                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="chartjs.html">Chart JS</a></li>
-                                            <li><a href="chartjs2.html">Chart JS2</a></li>
-                                            <li><a href="morisjs.html">Moris JS</a></li>
-                                            <li><a href="echarts.html">ECharts</a></li>
-                                            <li><a href="other_charts.html">Other Charts</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                                            <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="menu_section">
-                                <h3>Live On</h3>
-                                <ul class="nav side-menu">
-                                    <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="e_commerce.html">E-commerce</a></li>
-                                            <li><a href="projects.html">Projects</a></li>
-                                            <li><a href="project_detail.html">Project Detail</a></li>
-                                            <li><a href="contacts.html">Contacts</a></li>
-                                            <li><a href="profile.html">Profile</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="page_403.html">403 Error</a></li>
-                                            <li><a href="page_404.html">404 Error</a></li>
-                                            <li><a href="page_500.html">500 Error</a></li>
-                                            <li><a href="plain_page.html">Plain Page</a></li>
-                                            <li><a href="login.html">Login Page</a></li>
-                                            <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="#level1_1">Level One</a>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="chartjs.html">Chart JS</a></li>
+                                        <li><a href="chartjs2.html">Chart JS2</a></li>
+                                        <li><a href="morisjs.html">Moris JS</a></li>
+                                        <li><a href="echarts.html">ECharts</a></li>
+                                        <li><a href="other_charts.html">Other Charts</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                                        <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu_section">
+                            <h3>Live On</h3>
+                            <ul class="nav side-menu">
+                                <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="e_commerce.html">E-commerce</a></li>
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="project_detail.html">Project Detail</a></li>
+                                        <li><a href="contacts.html">Contacts</a></li>
+                                        <li><a href="profile.html">Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="page_403.html">403 Error</a></li>
+                                        <li><a href="page_404.html">404 Error</a></li>
+                                        <li><a href="page_500.html">500 Error</a></li>
+                                        <li><a href="plain_page.html">Plain Page</a></li>
+                                        <li><a href="login.html">Login Page</a></li>
+                                        <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#level1_1">Level One</a>
                                             <li><a>Level One<span class="fa fa-chevron-down"></span></a>
                                                 <ul class="nav child_menu">
                                                     <li class="sub_menu"><a href="level2.html">Level Two</a>
@@ -378,112 +382,113 @@
                                             </li>
                                             <li><a href="#level1_2">Level One</a>
                                             </li>
-                                        </ul>
-                                    </li>                  
-                                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                                </ul>
-                            </div>
-
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming
+                                            Soon</span></a></li>
+                            </ul>
                         </div>
+
+                    </div>
                     <?php } elseif ($_SESSION['nivel'] == "5") { 
                         $dados_profe = $pdo->prepare("SELECT * FROM funcionario_escola INNER JOIN usuario INNER JOIN cursos INNER JOIN disciplina ON funcionario_escola.cargo = '1' AND funcionario_escola.id_usuario = usuario.id_usuario AND usuario.id_usuario = '".$dados['id_usuario']."' AND cursos.id_curso = disciplina.curso AND disciplina.professor = funcionario_escola.id_funcionario_escola");
                         $dados_profe->bindParam(':id_usuario', $dados['id_usuario'], PDO::PARAM_INT);
                         $dados_profe->execute();
                         $dados_profe = $dados_profe->fetch(PDO::FETCH_ASSOC);
                         ?>
-                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                            <div class="menu_section">
-                                <h3>Menu</h3>
-                                <ul class="nav side-menu">
-                                    <li><a href="index.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
-                                        <!--                                    <ul class="nav child_menu">
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Menu</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="index.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
+                                    <!--                                    <ul class="nav child_menu">
                                                                                 <li><a href="index.php">Dashboard</a></li>
                                                                                 <li><a href="index2.html">Dashboard2</a></li>
                                                                                 <li><a href="index3.html">Dashboard3</a></li>
                                                                             </ul>-->
-                                    </li>
-                                    <li><a><i class="fa fa-edit"></i> Gerenciar aulas <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="chamada.php">Chamada</a></li>
-                                            <!-- <li><a href="form_advanced.html">Advanced Components</a></li>
+                                </li>
+                                <li><a><i class="fa fa-edit"></i> Gerenciar aulas <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="chamada.php">Chamada</a></li>
+                                        <!-- <li><a href="form_advanced.html">Advanced Components</a></li>
                                             <li><a href="form_validation.html">Form Validation</a></li>
                                             <li><a href="form_wizards.html">Form Wizard</a></li>
                                             <li><a href="form_upload.html">Form Upload</a></li>
                                             <li><a href="form_buttons.html">Form Buttons</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="form.html">General Form</a></li>
-                                            <li><a href="form_advanced.html">Advanced Components</a></li>
-                                            <li><a href="form_validation.html">Form Validation</a></li>
-                                            <li><a href="form_wizards.html">Form Wizard</a></li>
-                                            <li><a href="form_upload.html">Form Upload</a></li>
-                                            <li><a href="form_buttons.html">Form Buttons</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="general_elements.html">General Elements</a></li>
-                                            <li><a href="media_gallery.html">Media Gallery</a></li>
-                                            <li><a href="typography.html">Typography</a></li>
-                                            <li><a href="icons.html">Icons</a></li>
-                                            <li><a href="glyphicons.html">Glyphicons</a></li>
-                                            <li><a href="widgets.html">Widgets</a></li>
-                                            <li><a href="invoice.html">Invoice</a></li>
-                                            <li><a href="inbox.html">Inbox</a></li>
-                                            <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a href="calendar.php"><i class="fa fa-calendar"></i> Calendário <span class="fa fa-chevron-right"></span></a>
-                                        <ul class="nav child_menu">
-                                            <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
-                                            <!--                                        <li><a href="tables.html">Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="form.html">General Form</a></li>
+                                        <li><a href="form_advanced.html">Advanced Components</a></li>
+                                        <li><a href="form_validation.html">Form Validation</a></li>
+                                        <li><a href="form_wizards.html">Form Wizard</a></li>
+                                        <li><a href="form_upload.html">Form Upload</a></li>
+                                        <li><a href="form_buttons.html">Form Buttons</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="general_elements.html">General Elements</a></li>
+                                        <li><a href="media_gallery.html">Media Gallery</a></li>
+                                        <li><a href="typography.html">Typography</a></li>
+                                        <li><a href="icons.html">Icons</a></li>
+                                        <li><a href="glyphicons.html">Glyphicons</a></li>
+                                        <li><a href="widgets.html">Widgets</a></li>
+                                        <li><a href="invoice.html">Invoice</a></li>
+                                        <li><a href="inbox.html">Inbox</a></li>
+                                        <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
+                                    </ul>
+                                </li>
+                                <li><a href="calendar.php"><i class="fa fa-calendar"></i> Calendário <span class="fa fa-chevron-right"></span></a>
+                                    <ul class="nav child_menu">
+                                        <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
+                                        <!--                                        <li><a href="tables.html">Tables</a></li>
                                                                                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="chartjs.html">Chart JS</a></li>
-                                            <li><a href="chartjs2.html">Chart JS2</a></li>
-                                            <li><a href="morisjs.html">Moris JS</a></li>
-                                            <li><a href="echarts.html">ECharts</a></li>
-                                            <li><a href="other_charts.html">Other Charts</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                                            <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="menu_section">
-                                <h3>Live On</h3>
-                                <ul class="nav side-menu">
-                                    <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="e_commerce.html">E-commerce</a></li>
-                                            <li><a href="projects.html">Projects</a></li>
-                                            <li><a href="project_detail.html">Project Detail</a></li>
-                                            <li><a href="contacts.html">Contacts</a></li>
-                                            <li><a href="profile.html">Profile</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="page_403.html">403 Error</a></li>
-                                            <li><a href="page_404.html">404 Error</a></li>
-                                            <li><a href="page_500.html">500 Error</a></li>
-                                            <li><a href="plain_page.html">Plain Page</a></li>
-                                            <li><a href="login.html">Login Page</a></li>
-                                            <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="#level1_1">Level One</a>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="chartjs.html">Chart JS</a></li>
+                                        <li><a href="chartjs2.html">Chart JS2</a></li>
+                                        <li><a href="morisjs.html">Moris JS</a></li>
+                                        <li><a href="echarts.html">ECharts</a></li>
+                                        <li><a href="other_charts.html">Other Charts</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                                        <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu_section">
+                            <h3>Live On</h3>
+                            <ul class="nav side-menu">
+                                <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="e_commerce.html">E-commerce</a></li>
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="project_detail.html">Project Detail</a></li>
+                                        <li><a href="contacts.html">Contacts</a></li>
+                                        <li><a href="profile.html">Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="page_403.html">403 Error</a></li>
+                                        <li><a href="page_404.html">404 Error</a></li>
+                                        <li><a href="page_500.html">500 Error</a></li>
+                                        <li><a href="plain_page.html">Plain Page</a></li>
+                                        <li><a href="login.html">Login Page</a></li>
+                                        <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#level1_1">Level One</a>
                                             <li><a>Level One<span class="fa fa-chevron-down"></span></a>
                                                 <ul class="nav child_menu">
                                                     <li class="sub_menu"><a href="level2.html">Level Two</a>
@@ -496,97 +501,98 @@
                                             </li>
                                             <li><a href="#level1_2">Level One</a>
                                             </li>
-                                        </ul>
-                                    </li>                  
-                                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                                </ul>
-                            </div>
-
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming
+                                            Soon</span></a></li>
+                            </ul>
                         </div>
+
+                    </div>
                     <?php } elseif ($_SESSION['nivel'] == "6") { ?>
-                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                            <div class="menu_section">
-                                <h3>Menu</h3>
-                                <ul class="nav side-menu">
-                                    <li><a href="index.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
-                                        <!--                                    <ul class="nav child_menu">
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Menu</h3>
+                            <ul class="nav side-menu">
+                                <li><a href="index.php"><i class="fa fa-home"></i> Início <span class="fa fa-chevron-right"></span></a>
+                                    <!--                                    <ul class="nav child_menu">
                                                                                 <li><a href="index.php">Dashboard</a></li>
                                                                                 <li><a href="index2.html">Dashboard2</a></li>
                                                                                 <li><a href="index3.html">Dashboard3</a></li>
                                                                             </ul>-->
-                                    </li>
-                                    <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="form.html">General Form</a></li>
-                                            <li><a href="form_advanced.html">Advanced Components</a></li>
-                                            <li><a href="form_validation.html">Form Validation</a></li>
-                                            <li><a href="form_wizards.html">Form Wizard</a></li>
-                                            <li><a href="form_upload.html">Form Upload</a></li>
-                                            <li><a href="form_buttons.html">Form Buttons</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="general_elements.html">General Elements</a></li>
-                                            <li><a href="media_gallery.html">Media Gallery</a></li>
-                                            <li><a href="typography.html">Typography</a></li>
-                                            <li><a href="icons.html">Icons</a></li>
-                                            <li><a href="glyphicons.html">Glyphicons</a></li>
-                                            <li><a href="widgets.html">Widgets</a></li>
-                                            <li><a href="invoice.html">Invoice</a></li>
-                                            <li><a href="inbox.html">Inbox</a></li>
-                                            <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a href="calendar.php"><i class="fa fa-calendar"></i> Calendário <span class="fa fa-chevron-right"></span></a>
-                                        <ul class="nav child_menu">
-                                            <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
-                                            <!--                                        <li><a href="tables.html">Tables</a></li>
+                                </li>
+                                <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="form.html">General Form</a></li>
+                                        <li><a href="form_advanced.html">Advanced Components</a></li>
+                                        <li><a href="form_validation.html">Form Validation</a></li>
+                                        <li><a href="form_wizards.html">Form Wizard</a></li>
+                                        <li><a href="form_upload.html">Form Upload</a></li>
+                                        <li><a href="form_buttons.html">Form Buttons</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="general_elements.html">General Elements</a></li>
+                                        <li><a href="media_gallery.html">Media Gallery</a></li>
+                                        <li><a href="typography.html">Typography</a></li>
+                                        <li><a href="icons.html">Icons</a></li>
+                                        <li><a href="glyphicons.html">Glyphicons</a></li>
+                                        <li><a href="widgets.html">Widgets</a></li>
+                                        <li><a href="invoice.html">Invoice</a></li>
+                                        <li><a href="inbox.html">Inbox</a></li>
+                                        <!--                                        <li><a href="calendar.php">Calendar</a></li>-->
+                                    </ul>
+                                </li>
+                                <li><a href="calendar.php"><i class="fa fa-calendar"></i> Calendário <span class="fa fa-chevron-right"></span></a>
+                                    <ul class="nav child_menu">
+                                        <!--                                        <li><a href="calendar.php">Calendário</a></li>-->
+                                        <!--                                        <li><a href="tables.html">Tables</a></li>
                                                                                     <li><a href="tables_dynamic.html">Table Dynamic</a></li>-->
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="chartjs.html">Chart JS</a></li>
-                                            <li><a href="chartjs2.html">Chart JS2</a></li>
-                                            <li><a href="morisjs.html">Moris JS</a></li>
-                                            <li><a href="echarts.html">ECharts</a></li>
-                                            <li><a href="other_charts.html">Other Charts</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                                            <li><a href="fixed_footer.html">Fixed Footer</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="menu_section">
-                                <h3>Live On</h3>
-                                <ul class="nav side-menu">
-                                    <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="e_commerce.html">E-commerce</a></li>
-                                            <li><a href="projects.html">Projects</a></li>
-                                            <li><a href="project_detail.html">Project Detail</a></li>
-                                            <li><a href="contacts.html">Contacts</a></li>
-                                            <li><a href="profile.html">Profile</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="page_403.html">403 Error</a></li>
-                                            <li><a href="page_404.html">404 Error</a></li>
-                                            <li><a href="page_500.html">500 Error</a></li>
-                                            <li><a href="plain_page.html">Plain Page</a></li>
-                                            <li><a href="login.html">Login Page</a></li>
-                                            <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="#level1_1">Level One</a>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="chartjs.html">Chart JS</a></li>
+                                        <li><a href="chartjs2.html">Chart JS2</a></li>
+                                        <li><a href="morisjs.html">Moris JS</a></li>
+                                        <li><a href="echarts.html">ECharts</a></li>
+                                        <li><a href="other_charts.html">Other Charts</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
+                                        <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu_section">
+                            <h3>Live On</h3>
+                            <ul class="nav side-menu">
+                                <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="e_commerce.html">E-commerce</a></li>
+                                        <li><a href="projects.html">Projects</a></li>
+                                        <li><a href="project_detail.html">Project Detail</a></li>
+                                        <li><a href="contacts.html">Contacts</a></li>
+                                        <li><a href="profile.html">Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="page_403.html">403 Error</a></li>
+                                        <li><a href="page_404.html">404 Error</a></li>
+                                        <li><a href="page_500.html">500 Error</a></li>
+                                        <li><a href="plain_page.html">Plain Page</a></li>
+                                        <li><a href="login.html">Login Page</a></li>
+                                        <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="#level1_1">Level One</a>
                                             <li><a>Level One<span class="fa fa-chevron-down"></span></a>
                                                 <ul class="nav child_menu">
                                                     <li class="sub_menu"><a href="level2.html">Level Two</a>
@@ -599,13 +605,14 @@
                                             </li>
                                             <li><a href="#level1_2">Level One</a>
                                             </li>
-                                        </ul>
-                                    </li>                  
-                                    <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                                </ul>
-                            </div>
-
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming
+                                            Soon</span></a></li>
+                            </ul>
                         </div>
+
+                    </div>
                     <?php } ?>
                     <!-- /sidebar menu -->
 
@@ -638,8 +645,10 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../production/images/img.jpg" alt=""><?php echo $dados['nome'] ?>
+                                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="../production/images/img.jpg" alt="">
+                                    <?php echo $dados['nome'] ?>
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -655,7 +664,8 @@
                             </li>
 
                             <li role="presentation" class="dropdown">
-                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown"
+                                    aria-expanded="false">
                                     <i class="fa fa-envelope-o"></i>
                                     <span class="badge bg-green">6</span>
                                 </a>
@@ -668,7 +678,8 @@
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
                                             </span>
                                         </a>
                                     </li>
@@ -680,7 +691,8 @@
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
                                             </span>
                                         </a>
                                     </li>
@@ -692,7 +704,8 @@
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
                                             </span>
                                         </a>
                                     </li>
@@ -704,7 +717,8 @@
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                Film festivals used to be do-or-die moments for movie makers. They were
+                                                where...
                                             </span>
                                         </a>
                                     </li>

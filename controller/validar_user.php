@@ -4,7 +4,7 @@ try {
     $login = $_POST['login']; //Pegando dados passados por AJAX
     $senha = $_POST['senha'];
     include_once dirname(__FILE__) . "/../config/conexao.php";
-    $sql = "SELECT * FROM usuario WHERE login ='" . $login . "' AND senha='" . $senha . "'";
+    $sql = "SELECT * FROM usuario INER JOIN instituicao ON usuario.login ='" . $login . "' AND usuario.senha='" . $senha . "'";
     $query = $pdo->query($sql);
     if ($query) {
         $sql_result = $query->fetchAll(PDO::FETCH_ASSOC);
