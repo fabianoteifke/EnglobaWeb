@@ -465,3 +465,242 @@ class funcionario_escola extends Banco1 {
     }
 
 }
+class professor extends Banco1 {
+
+    private $id;
+    private $user;
+
+    function getId() {
+        return $this->id;
+    }
+
+    function getUser() {
+        return $this->user;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setUser($user) {
+        $this->user = $user;
+    }
+        
+    public function salvar() {
+        try {
+
+            $query = "INSERT INTO professor (id_usuario) VALUES (:id_usuario) ";
+
+            $this->stmt = $this->conn->prepare($query);
+
+            $this->stmt->bindParam(':id_usuario', $this->user, PDO::PARAM_INT);
+
+            if ($this->stmt->execute()) {
+                return true;
+            }
+        } catch (PDOException $e) {
+            echo "<div class='erro'>" . $e->getMessage() . "</div>";
+            return false;
+        }
+    }
+
+    public function atualizar() {
+        try {
+            $query = "UPDATE professor SET id_usuario = :id_usuario WHERE id_professor = id_:professor ";
+            $this->stmt = $this->conn->prepare($query);
+
+            $this->stmt->bindParam(':id_professor', $this->id, PDO::PARAM_INT);
+            $this->stmt->bindParam(':id_usuario', $this->user, PDO::PARAM_INT);
+
+            if ($this->stmt->execute()) {
+                return true;
+            }
+        } catch (PDOException $e) {
+            echo "<div class='erro'>" . $e->getMessage() . "</div>";
+            return false;
+        }
+    }
+
+    public function excluir() {
+        try {
+            $query = "DELETE FROM professor WHERE id_professor = :id_professor ";
+            $this->stmt = $this->conn->prepare($query);
+            $this->stmt->bindParam(':id_professor', $this->id, PDO::PARAM_INT);
+            if ($this->stmt->execute()) {
+                return true;
+            }
+        } catch (PDOException $e) {
+            echo "<div class='erro'>" . $e->getMessage() . "</div>";
+            return false;
+        }
+    }
+   // CREATE TABLE `aluno_engloba`.`professor` (
+   //     `id_professor` INT NOT NULL AUTO_INCREMENT,
+   //     `id_usuario` INT NOT NULL,
+   //     PRIMARY KEY (`id_professor`),
+   //     INDEX `id_usuario_idx` (`id_usuario` ASC),
+   //     CONSTRAINT `id_usuario`
+   //       FOREIGN KEY (`id_usuario`)
+   //       REFERENCES `aluno_engloba`.`usuario` (`id_usuario`)
+   //       ON DELETE CASCADE
+   //       ON UPDATE CASCADE);
+   class Aluno extends Banco1 {
+
+    public $id_aluno;
+    public $id_usuario;
+    public $sobrenome;
+    public $endereco;
+    public $cidade;
+    public $estado;
+    public $cpf;
+    public $telefone;
+    public $matricula;
+    public $curso;
+    
+    function getId_aluno() {
+        return $this->id_aluno;
+    }
+
+    function getId_usuario() {
+        return $this->id_usuario;
+    }
+    
+    function getSobrenome() {
+        return $this->sobrenome;
+    }
+
+    function getEndereco() {
+        return $this->endereco;
+    }
+
+    function getCidade() {
+        return $this->cidade;
+    }
+
+    function getEstado() {
+        return $this->estado;
+    }
+
+    function getCpf() {
+        return $this->cpf;
+    }
+
+    function getTelefone() {
+        return $this->telefone;
+    }
+
+    function getMatricula() {
+        return $this->matricula;
+    }
+
+    function getCurso() {
+        return $this->curso;
+    }
+
+    function setId_aluno($id_aluno) {
+        $this->id_aluno = $id_aluno;
+    }
+
+    function setId_usuario($id_usuario) {
+        $this->id_usuario = $id_usuario;
+    }
+
+    function setSobrenome($sobrenome) {
+        $this->sobrenome = $sobrenome;
+    }
+
+    function setEndereco($endereco) {
+        $this->endereco = $endereco;
+    }
+
+    function setCidade($cidade) {
+        $this->cidade = $cidade;
+    }
+
+    function setEstado($estado) {
+        $this->estado = $estado;
+    }
+
+    function setCpf($cpf) {
+        $this->cpf = $cpf;
+    }
+
+    function setTelefone($telefone) {
+        $this->telefone = $telefone;
+    }
+
+    function setMatricula($matricula) {
+        $this->matricula = $matricula;
+    }
+
+    function setCurso($curso) {
+        $this->curso = $curso;
+    }
+
+    public function salvar() {
+        try {
+            $query = "INSERT INTO aluno (sobrenome,endereco,cidade,estado,cpf,telefone,matricula,curso,id_usuario) VALUES (:sobrenome,:endereco,:cidade,:estado,:cpf,:telefone,:matricula,:curso,:id_usuario) ";
+
+            $this->stmt = $this->conn->prepare($query);
+
+            $this->stmt->bindParam(':sobrenome', $this->sobrenome, PDO::PARAM_STR);
+            $this->stmt->bindParam(':endereco', $this->endereco, PDO::PARAM_STR);
+            $this->stmt->bindParam(':cidade', $this->cidade, PDO::PARAM_STR);
+            $this->stmt->bindParam(':estado', $this->estado, PDO::PARAM_STR);
+            $this->stmt->bindParam(':cpf', $this->cpf, PDO::PARAM_STR);
+            $this->stmt->bindParam(':telefone', $this->telefone, PDO::PARAM_STR);
+            $this->stmt->bindParam(':matricula', $this->matricula, PDO::PARAM_STR);
+            $this->stmt->bindParam(':curso', $this->curso, PDO::PARAM_STR);
+            $this->stmt->bindParam(':id_usuario', $this->id_usuario, PDO::PARAM_STR);
+
+            if ($this->stmt->execute()) {
+                return true;
+            }
+        } catch (PDOException $e) {
+            echo "<div class='erro'>" . $e->getMessage() . "</div>";
+            return false;
+        }
+    }
+
+    function atualizar() {
+        try {
+            $query = "UPDATE aluno SET sobrenome=:sobrenome,endereco=:endereco,cidade=:cidade,estado=:estado,cpf=:cpf,telefone=:telefone,matricula=:matricula,curso=:curso WHERE id_aluno = :id_aluno ";
+
+            $this->stmt = $this->conn->prepare($query);
+
+            $this->stmt->bindParam(':sobrenome', $this->sobrenome, PDO::PARAM_STR);
+            $this->stmt->bindParam(':endereco', $this->endereco, PDO::PARAM_STR);
+            $this->stmt->bindParam(':cidade', $this->cidade, PDO::PARAM_STR);
+            $this->stmt->bindParam(':estado', $this->estado, PDO::PARAM_STR);
+            $this->stmt->bindParam(':cpf', $this->cpf, PDO::PARAM_STR);
+            $this->stmt->bindParam(':telefone', $this->telefone, PDO::PARAM_STR);
+            $this->stmt->bindParam(':matricula', $this->matricula, PDO::PARAM_STR);
+            $this->stmt->bindParam(':curso', $this->curso, PDO::PARAM_STR);
+            $this->stmt->bindParam(':id_aluno', $this->id_aluno, PDO::PARAM_INT);
+
+            if ($this->stmt->execute()) {
+                return true;
+            }
+        } catch (PDOException $e) {
+            echo "<div class='erro'>" . $e->getMessage() . "</div>";
+            return false;
+        }
+    }
+
+    function excluir() {
+        try {
+            $query = "DELETE FROM aluno WHERE id_aluno = :id_aluno ";
+            $this->stmt = $this->conn->prepare($query);
+            $this->stmt->bindParam(':id_aluno', $this->id_aluno, PDO::PARAM_INT);
+            if ($this->stmt->execute()) {
+                return true;
+            }
+        } catch (PDOException $e) {
+            echo "<div class='erro'>" . $e->getMessage() . "</div>";
+            return false;
+        }
+    }
+
+}
+
+}

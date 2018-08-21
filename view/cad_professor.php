@@ -1,21 +1,10 @@
 <?php
 session_start();
 include_once dirname(__FILE__) . "/../config/conexao.php";
-if($_GET){
-$h = $_GET['h'];
-if (!empty($h)) {
-    $_SESSION['h'] = $h;
-    //$pdo->query("UPDATE user_temporario SET email='$mail'");
-} else {
-    echo 'erro no cadastro';
-}
-}
 include_once '../model/Instituicao.class.php';
 $user = new usuario();
-$inst = new Instituicao();
-$mod = new modulo();
+$inst = new professor();
 if ($_POST) {
-    $h = $_SESSION['h'];
     //Verifica a existência dos campos no POST do formulário
     if (isset($_POST["nome"])) {
         $login = $_POST['login'];
@@ -32,6 +21,12 @@ if ($_POST) {
             $user->setData_nasc($_POST['data']);
             $user->setSexo($_POST['sexo']);
             $msg = $user->salvar();
+
+            $res = $pdo->prepare("SELECT max(id_usuario) FROM usuario");
+            $res->execute();
+            $res = $res->fetch(PDO::FETCH_ASSOC);
+            $inst->setUser(res['max(id_usuario)']);
+            $inst->salvar();
 
             if (isset($msg)) {
                 if (!$msg) {
@@ -145,7 +140,7 @@ if (isset($msgimgerro)) {
                     <div class="x_content">
                         <br />
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post"
-                            action="cad_institu.php">
+                            action="cad_professor.php">
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nome <span
                                         class="required">*</span>
@@ -197,6 +192,16 @@ if (isset($msgimgerro)) {
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="text" class="form-control" name="data" data-inputmask="'mask': '99/99/9999'">
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Disciplina <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select class="form-control" name="disciplina" required="required" id="exemlo">
+                                                <option value="">Selecione uma opção</option>
+                                                <option value="Matemática">Matemática</option>
+                                                <option value="Progamação Web">Progamação Web</option>
+                                                </select>
+                                            </div>
                             </div>
                             <div class="ln_solid"></div>
                             <div class="form-group">
@@ -309,38 +314,7 @@ if (isset($msgimgerro)) {
             }
         });
 
-        $('#estados').select2();
-        $('#cidades').select2();
-        $.getJSON('../vendors/estados_cidades.json', function(data) {
-            var items = [];
-            var options = '<option value="">Escolha um estado</option>';
-            $.each(data, function(key, val) {
-                options += '<option value="' + val.nome + '">' + val.nome + '</option>';
-            });
-            $("#estados").html(options);
-
-            $("#estados").change(function() {
-
-                var options_cidades = '';
-                var str = "";
-
-                $("#estados option:selected").each(function() {
-                    str += $(this).text();
-                });
-
-                $.each(data, function(key, val) {
-                    if (val.nome == str) {
-                        $.each(val.cidades, function(key_city, val_city) {
-                            options_cidades += '<option value="' + val_city + '">' +
-                                val_city + '</option>';
-                        });
-                    }
-                });
-                $("#cidades").html(options_cidades);
-
-            }).change();
-
-        });
+        $('#exemlo').select2();
     }
     $(document).ready(init);
 </script>

@@ -1,8 +1,54 @@
 <?php
 session_start();
+include_once dirname(__FILE__) . "/../config/conexao.php";
 if ($_SESSION['logado'] <> TRUE) {
     session_destroy();
     header("location: ../production/login.php");
+}
+include_once '../model/Instituicao.class.php';
+
+if ($_POST) {
+    print_r($_POST);
+    if (isset($_POST["nome"]) && isset($_POST["sobrenome"]) && isset($_POST["cpf"]) && isset($_POST["fone"]) && isset($_POST["endereco"]) && isset($_POST["matricula"]) && isset($_POST["curso"]) && isset($_POST["cidade"]) && isset($_POST["estado"])) {
+        $user = new Usuario();
+        $user->setNome($_POST["nome"]);
+        $user->setSenha("123");
+        $user->setLogin($_POST["matricula"]);
+        $user->setNivel(6);
+        $user->setInstituicao($_SESSION['instituicao']);
+        $user->setEmail($_POST['email']);
+        $user->setData_nasc($_POST['data_nasc']);
+        $user->setSexo($_POST['sexo']);
+        $msg = $user->salvar();
+        
+        $res = $pdo->prepare("SELECT max(id_usuario) FROM usuario");
+        $res->execute();
+        $res = $res->fetch(PDO::FETCH_ASSOC);
+        echo $res['max(id_usuario)'];
+        $aluno = new Aluno();
+        $aluno->setSobrenome($_POST["sobrenome"]);
+        $aluno->setCpf($_POST["cpf"]);
+        $aluno->setTelefone($_POST["fone"]);
+        $aluno->setEndereco($_POST["endereco"]);
+        $aluno->setMatricula($_POST["matricula"]);
+        $aluno->setCurso($_POST["curso"]);
+        $aluno->setCidade($_POST["cidade"]);
+        $aluno->setEstado($_POST["estado"]);
+        $aluno->setId_usuario($res['max(id_usuario)']);
+        if (empty($_POST["id"])) {
+            $msg = $aluno->salvar();
+        }
+        if (isset($msg)) {
+            if (!$msg) {
+                $erro = "Ocorreu um erro no registro do emprego!";
+            } else {
+                $msg = "Emprego cadastrado com sucesso!";
+                header("location: gerenciar_aluno.php");
+            }
+        }
+    } else {
+        $erro = "Houve um erro no envio do formulário";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -104,7 +150,7 @@ if ($_SESSION['logado'] <> TRUE) {
                     <div class="x_panel">
                         <div class="x_content">
                             <br />
-                            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                            <form id="demo-form2" method="post" data-parsley-validate class="form-horizontal form-label-left">
 
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nome">Nome <span class="required">*</span>
@@ -127,7 +173,7 @@ if ($_SESSION['logado'] <> TRUE) {
                                     <input type="radio" class="flat" name="sexo" id="F" value="F" />
                                 </p>
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="estado">Selecione o estado:</label>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="estado">Estado:</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <select id="estados" class="form-control col-md-7 col-xs-12" name="estado">
                                             <option value=""></option>
@@ -135,10 +181,17 @@ if ($_SESSION['logado'] <> TRUE) {
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cidade">Selecione a cidade:</label>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cidade">Cidade:</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <select id="cidades" class="form-control col-md-7 col-xs-12" name="cidade">
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="fone">Endereco <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" id="endereco" name="endereco" required="required" class="form-control col-md-7 col-xs-12">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -149,6 +202,13 @@ if ($_SESSION['logado'] <> TRUE) {
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="matricula">Matricula <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="number" id="matricula" name="matricula" required="required" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cpf">CPF <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
@@ -156,10 +216,24 @@ if ($_SESSION['logado'] <> TRUE) {
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="curso">Curso <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" id="curso" name="curso" class="form-control col-md-7 col-xs-12">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">E-mail <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12" placeholder="Informe o Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Data de Nascimento <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="data_nasc" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                                        <input id="data_nasc" name="data_nasc" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
                                     </div>
                                 </div>
                                 <div class="ln_solid"></div>
@@ -261,8 +335,9 @@ if ($_SESSION['logado'] <> TRUE) {
                     }).change();
 
                 });
-                
-            };
+
+            }
+            ;
             $(document).ready(init);
 </script>
 </body>
